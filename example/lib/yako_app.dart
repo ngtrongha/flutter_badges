@@ -17,7 +17,8 @@ class YakoApp extends StatelessWidget {
         elevation: 0,
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
       ),
-      badgeContent: Text('20', style: TextStyle(color: Colors.white)),
+      badgeContent:
+          Text('20000000000000', style: TextStyle(color: Colors.white)),
       position: badges.BadgePosition.topEnd(top: -10),
       badgeAnimation: badges.BadgeAnimation.size(toAnimate: true),
       onTap: () {

@@ -20,9 +20,9 @@ class _InstagramMessageState extends State<InstagramMessage> {
   Widget build(BuildContext context) {
     return badges.Badge(
       position: badges.BadgePosition.bottomStart(bottom: -20, start: 5),
-      badgeContent: Text(widget.emojiReaction, style: TextStyle(fontSize: 20)),
+      badgeContent: Text(widget.emojiReaction, style: const TextStyle(fontSize: 20)),
       showBadge: _isLiked,
-      badgeAnimation: badges.BadgeAnimation.scale(
+      badgeAnimation: const badges.BadgeAnimation.scale(
         animationDuration: Duration(milliseconds: 200),
         disappearanceFadeAnimationDuration: Duration(milliseconds: 200),
         curve: Curves.easeInCubic,
@@ -30,9 +30,9 @@ class _InstagramMessageState extends State<InstagramMessage> {
       badgeStyle: badges.BadgeStyle(
         shape: badges.BadgeShape.square,
         borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: Colors.white, width: 2),
+        borderSide: const BorderSide(color: Colors.white, width: 2),
         badgeColor: Colors.grey.shade300,
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       ),
       child: GestureDetector(
         onDoubleTap: () {
@@ -43,7 +43,7 @@ class _InstagramMessageState extends State<InstagramMessage> {
               color: Colors.blue, borderRadius: BorderRadius.circular(16)),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-            child: Text(widget.text, style: TextStyle(color: Colors.white)),
+            child: Text(widget.text, style: const TextStyle(color: Colors.white)),
           ),
         ),
       ),

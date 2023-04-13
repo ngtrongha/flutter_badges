@@ -1,12 +1,13 @@
 import 'package:badges/badges.dart' as badges;
-import 'package:example/alarm_app.dart';
-import 'package:example/flag_app.dart';
-import 'package:example/human_avatar.dart';
-import 'package:example/instagram_message.dart';
-import 'package:example/instagram_verified_account.dart';
-import 'package:example/twitter_verified_account.dart';
-import 'package:example/yako_app.dart';
 import 'package:flutter/material.dart';
+
+import 'alarm_app.dart';
+import 'flag_app.dart';
+import 'human_avatar.dart';
+import 'instagram_message.dart';
+import 'instagram_verified_account.dart';
+import 'twitter_verified_account.dart';
+import 'yako_app.dart';
 
 void main() => runApp(MyApp());
 
@@ -45,11 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
           leading: badges.Badge(
             position: badges.BadgePosition.topEnd(top: 10, end: 10),
             child: IconButton(
-              icon: Icon(Icons.menu),
+              icon: const Icon(Icons.menu),
               onPressed: () {},
             ),
           ),
-          title: Text('Badges Demo'),
+          title: const Text('Badges Demo'),
           actions: <Widget>[
             _shoppingCartBadge(),
           ],
@@ -62,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   TwitterVerifiedAccount(),
                   SizedBox(width: 10),
                   InstagramVerifiedAccount(),
@@ -76,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
+                    children: const [
                       AlarmApp(),
                       YakoApp(),
                       FlagApp(),
@@ -87,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 36, left: 24, right: 24),
                   child: Column(
-                    children: [
+                    children: const [
                       Align(
                         alignment: Alignment.centerRight,
                         child: InstagramMessage(
@@ -116,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _shoppingCartBadge() {
     return badges.Badge(
       position: badges.BadgePosition.topEnd(top: 0, end: 3),
-      badgeAnimation: badges.BadgeAnimation.slide(
+      badgeAnimation: const badges.BadgeAnimation.slide(
           // disappearanceFadeAnimationDuration: Duration(milliseconds: 200),
           // curve: Curves.easeInCubic,
           ),
@@ -126,9 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       badgeContent: Text(
         _cartBadgeAmount.toString(),
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
-      child: IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {}),
+      child: IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),
     );
   }
 
@@ -136,11 +137,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return TabBar(tabs: [
       Tab(
         icon: badges.Badge(
-          badgeStyle: badges.BadgeStyle(
+          badgeStyle: const badges.BadgeStyle(
             badgeColor: Colors.blue,
           ),
           position: badges.BadgePosition.topEnd(top: -14),
-          badgeContent: Text(
+          badgeContent: const Text(
             '3',
             style: TextStyle(color: Colors.white),
           ),
@@ -155,8 +156,8 @@ class _HomeScreenState extends State<HomeScreen> {
           badgeStyle: badges.BadgeStyle(
             shape: badges.BadgeShape.square,
             borderRadius: BorderRadius.circular(5),
-            padding: EdgeInsets.all(2),
-            badgeGradient: badges.BadgeGradient.linear(
+            padding: const EdgeInsets.all(2),
+            badgeGradient: const badges.BadgeGradient.linear(
               colors: [
                 Colors.purple,
                 Colors.blue,
@@ -166,12 +167,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           position: badges.BadgePosition.topEnd(top: -12, end: -20),
-          badgeContent: Text(
+          badgeContent: const Text(
             'NEW',
             style: TextStyle(
                 color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
           ),
-          child: Text(
+          child: const Text(
             'music',
             style: TextStyle(color: Colors.black),
           ),
@@ -185,11 +186,11 @@ class _HomeScreenState extends State<HomeScreen> {
       showSelectedLabels: false,
       showUnselectedLabels: false,
       items: [
-        BottomNavigationBarItem(
+        const BottomNavigationBarItem(
           label: 'Events',
           icon: Icon(Icons.dashboard),
         ),
-        BottomNavigationBarItem(
+        const BottomNavigationBarItem(
           label: 'Messages',
           icon: Icon(Icons.notifications),
         ),
@@ -197,16 +198,16 @@ class _HomeScreenState extends State<HomeScreen> {
           label: 'Settings',
           icon: badges.Badge(
             position: badges.BadgePosition.topEnd(),
-            badgeStyle: badges.BadgeStyle(
+            badgeStyle: const badges.BadgeStyle(
               padding: EdgeInsets.all(6),
             ),
             badgeContent: Container(
               height: 3,
               width: 3,
               decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                  const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
             ),
-            child: Icon(Icons.settings),
+            child: const Icon(Icons.settings),
           ),
         ),
       ],
@@ -226,8 +227,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       color = Colors.red;
                     }
                   }),
-              icon: Icon(Icons.add),
-              label: Text('Add to cart')),
+              icon: const Icon(Icons.add),
+              label: const Text('Add to cart')),
           ElevatedButton.icon(
               onPressed: _showCartBadge
                   ? () => setState(() {
@@ -235,8 +236,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         color = Colors.blue;
                       })
                   : null,
-              icon: Icon(Icons.remove),
-              label: Text('Remove from cart')),
+              icon: const Icon(Icons.remove),
+              label: const Text('Remove from cart')),
         ],
       ),
     );
