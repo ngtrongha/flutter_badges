@@ -191,6 +191,7 @@ class BadgeState extends State<Badge> with TickerProviderStateMixin {
             opacity: _getOpacity(),
             child: UnconstrainedBox(
               child: IntrinsicWidth(
+                stepHeight: widget.badgeStyle.maxHeight,
                 child: AspectRatio(
                   aspectRatio:
                       widget.badgeStyle.shape == BadgeShape.square ? 1.5 : 1.0,

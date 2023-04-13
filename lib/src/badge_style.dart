@@ -33,6 +33,8 @@ class BadgeStyle {
   /// The default value is EdgeInsets.all(5.0).
   final EdgeInsetsGeometry? padding;
 
+  final double? maxHeight;
+
   const BadgeStyle({
     this.shape = BadgeShape.circle,
     this.borderRadius = BorderRadius.zero,
@@ -42,5 +44,6 @@ class BadgeStyle {
     this.badgeGradient,
     this.borderGradient,
     this.padding,
+    this.maxHeight,
   });
 }
